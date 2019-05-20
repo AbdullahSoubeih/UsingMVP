@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.routes.usingmvp.Presenter.MainActivityPresenter;
 import com.routes.usingmvp.R;
@@ -19,7 +18,7 @@ import com.routes.usingmvp.R;
 public class MainActivity extends AppCompatActivity implements MainActivityPresenter.View {
 
     private MainActivityPresenter presenter;
-    private TextView myTextView;
+    private TextView myTextView, nameStrong;
     private ProgressBar progressBar;
 
     @Override
@@ -32,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
         presenter = new MainActivityPresenter(this);
 
         myTextView = findViewById(R.id.myTextView);
+        nameStrong = findViewById(R.id.nameStrong);
         EditText userName = findViewById(R.id.username);
         EditText email = findViewById(R.id.email);
         initProgressBar();
@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 presenter.updateFullName(s.toString());
+
+                presenter.userNameStrong(s.toString());
             }
 
             @Override
@@ -84,6 +86,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     @Override
     public void updateUserInfoTextView(String info) {
         myTextView.setText(info);
+    }
+
+    @Override
+    public void userNameStrong(String usernameStrong) {
+        nameStrong.setText(usernameStrong);
     }
 
     @Override

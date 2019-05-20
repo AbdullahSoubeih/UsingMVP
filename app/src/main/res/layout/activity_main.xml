@@ -32,6 +32,14 @@
             android:hint="User Name"/>
 
 
+        <TextView
+            android:id="@+id/nameStrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name Strong"
+            android:layout_marginBottom="7dp"/>
+
+
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"

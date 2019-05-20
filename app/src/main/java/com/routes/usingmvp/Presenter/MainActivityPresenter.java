@@ -24,9 +24,23 @@ public class MainActivityPresenter {
 
     }
 
+    public void userNameStrong(String fullName){
+
+        int userNameLength = fullName.length();
+
+        if (userNameLength <= 5) view.userNameStrong("Small");
+        if (userNameLength > 5){
+
+            view.userNameStrong(userNameLength <= 10 ? "Medium" : "Large");
+
+        }
+
+    }
+
     public interface View{
 
         void updateUserInfoTextView(String info);
+        void userNameStrong(String usernameStrong);
         void showProgressBar();
         void hideProgressBar();
 
