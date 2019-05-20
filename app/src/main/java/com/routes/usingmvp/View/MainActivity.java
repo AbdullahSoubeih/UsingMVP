@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     private TextView myTextView, nameStrong;
     private ProgressBar progressBar;
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
         });
 
     }
+
+
 
     private void initProgressBar() {
         progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleSmall);
